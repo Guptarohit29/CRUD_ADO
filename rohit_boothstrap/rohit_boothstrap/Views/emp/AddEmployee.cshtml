@@ -1,0 +1,29 @@
+﻿@model rohit_boothstrap.Models.empclass1
+@{
+    ViewBag.Title = "AddEmployee";
+}
+
+<h2>AddEmployee</h2>
+
+@using (Html.BeginForm("AddEmployee", "emp", FormMethod.Post))
+{
+
+    @Html.HiddenFor(m => m.Id);
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Enter name..", @required = "required" })
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Enter email..", @required = "required" })
+    </div>
+
+    <div class="form-group">
+        <label>Address</label>
+        @Html.TextBoxFor(m => m.Address, new { @class = "form-control", @placeholder = "Enter Address..", @required = "required" })
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

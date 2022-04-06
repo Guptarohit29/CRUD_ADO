@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@model List<rohit_boothstrap.Models.empclass1>
+<h2>empIndex</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Action</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.Address</td>
+            <td><a href="@Url.Action("Edit","emp",new { item.Id})" class="btn btn-success">Edit</a></td>
+            <td><a href="@Url.Action("Delete","emp",new { item.Id})" class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+</table>
